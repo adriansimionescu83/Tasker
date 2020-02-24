@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+mongoose.set('useCreateIndex', true);
+
 
 // Import models for db operations
 const CustomerModel = require('./models/Customers.js');
@@ -72,7 +74,6 @@ app.get(
     }
 );
 
-
 app.get(
     '*',
     (req, res)=>{
@@ -83,7 +84,7 @@ app.get(
 
 // Listen to the port
 app.listen(
-    3010, // connect to this port
+    4010, // connect to this port
     () => {
         console.log('you are connected');
     } // do this when you're connected

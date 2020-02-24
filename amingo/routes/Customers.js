@@ -8,10 +8,13 @@ router.post(
     (req, res)=>{
 
         const formdata = {
-            'firstname': req.body.firstname,
-            'lastname': req.body.lastname,
-            'email': req.body.email,
-            'password': req.body.password, 
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            password: req.body.password, 
+            order: req.body.order,
+            phonenumber: req.body.phonenumber,
+            dateofbirth: req.body.dateofbirth
         }
 
         const theCustomerModel = new customerModel(formdata);

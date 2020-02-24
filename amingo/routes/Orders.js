@@ -17,12 +17,11 @@ router.post(
         newOrderModel.save();
         res.send('Order is created');
     }
-);
+)
 
 router.get(
-    '/all',// http://www.myapp.com/order/all
+    '/all',// http://www.myapp.com/orders/all
     (req, res)=>{
-
         OrderModel
         .find()
         .then((results)=>{
@@ -34,7 +33,7 @@ router.get(
             );
         })   
     }
-);
+)
 
 
 
