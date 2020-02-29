@@ -10,9 +10,9 @@ router.post(
             category: req.body.category,
             city: req.body.city,
             country: req.body.country,
-            price: req.body.price,
             description: req.body.description,
-            workers: req.body.workers
+            workers: req.body.workers,
+            image: req.body.image,
         }
         const newServiceModel = new ServiceModel(formdata);
         newServiceModel.save();

@@ -12,9 +12,9 @@ router.post(
             email: req.body.email,
             password: req.body.password,
             phonenumber: req.body.phonenumber,
-            orders: req.body.orders,         
+            orders: req.body.orders,
+            photo: req.body.photo       
             }
-
         const newWorkerModel = new WorkerModel(formdata);
         newWorkerModel.save();
         res.send('Worker is created');

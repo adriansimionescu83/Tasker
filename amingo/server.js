@@ -20,14 +20,16 @@ const OrderRoutes = require('./routes/Orders.js');
 const ServiceRoutes = require('./routes/Services.js');
 const TestimonialRoutes = require('./routes/Services.js');
 const WorkerRoutes = require('./routes/Workers.js');
+const cors = require ('cors');
 
 
 // Configure express to parse BODY
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cors());
 
 // Connect to our database
-const dbURL = "mongodb+srv://admin:P@ssw0rd@cluster0-5ujxi.mongodb.net/test?retryWrites=true&w=majority"
+const dbURL = "mongodb+srv://admin:P@ssw0rd@cluster0-5ujxi.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(
     dbURL,
     {useNewUrlParser: true, useUnifiedTopology: true}
@@ -77,7 +79,7 @@ app.get(
 app.get(
     '*',
     (req, res)=>{
-        res.send("<h1 style='color:black'>404</h1>");
+        res.send("<h1 style='color:black'>404 Not found</h1>");
     }
 );
 
